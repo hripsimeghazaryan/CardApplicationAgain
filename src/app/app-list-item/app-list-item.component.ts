@@ -13,7 +13,6 @@ export class AppListItemComponent {
   constructor() { }
 
   removeCard(card: Card): void {
-    const item = window.document.getElementById((card.id).toString());
-    item?.remove();
+    cards.splice(cards.findIndex(x => x.id == card.id), 1);
   }
 }
