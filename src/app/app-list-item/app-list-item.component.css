@@ -1,0 +1,21 @@
+div:first-child {
+    padding: 50px 75px 50px 90px;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+div:first-child h1 {
+    margin: 50px;
+}
+
+div button {
+    background-color: transparent;
+    border: none;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}

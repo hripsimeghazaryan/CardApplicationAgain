@@ -1,0 +1,12 @@
+<div *ngIf="cards.length != 0" id="cards">
+    <li *ngFor="let card of cards" id={{card.id}}>
+        <div>
+            <h1>{{ card.cardNumber }}</h1>
+        </div>
+        <div>
+            <button (click)="removeCard(card)">
+                X
+            </button>
+        </div>
+    </li>
+</div>
