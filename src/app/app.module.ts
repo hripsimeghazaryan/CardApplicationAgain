@@ -9,6 +9,8 @@ import { AppInstructionsComponent } from './app-instructions/app-instructions.co
 import { AppMainComponent } from './app-main/app-main.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 
+import { ListStorageService } from './list-storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ListStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
