@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { cards } from '../cards';
+import { cards, Card } from '../cards';
 
 @Component({
   selector: 'app-top-bar',
@@ -13,10 +13,11 @@ export class AppTopBarComponent {
 
   addCard() {
     this.cards.push({id: ++this.cardId, cardNumber: Math.floor(Math.random() * 100)});
+    localStorage.setItem("savedList", JSON.stringify(this.cards));
   }
 
   sortCards() {
-    this.cards.sort((a, b) => a.cardNumber - b.cardNumber);
+    this.cards.sort((a: { cardNumber: number; }, b: { cardNumber: number; }) => a.cardNumber - b.cardNumber);
+    localStorage.setItem("savedList", JSON.stringify(this.cards));
   }
-
 }

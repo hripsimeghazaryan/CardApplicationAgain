@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { cards, Card } from '../cards';
 
@@ -13,6 +13,7 @@ export class AppListItemComponent {
   constructor() { }
 
   removeCard(card: Card): void {
-    cards.splice(cards.findIndex(x => x.id == card.id), 1);
+    cards.splice(cards.findIndex((x: { id: number; }) => x.id == card.id), 1);
+    localStorage.setItem("savedList", JSON.stringify(this.cards));
   }
 }

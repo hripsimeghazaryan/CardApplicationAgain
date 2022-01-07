@@ -3,5 +3,4 @@ export interface Card {
     cardNumber: number;
 }
 
-
-export const cards: Card[] = [];
+export const cards: Card[] = JSON.parse(localStorage.getItem("savedList") || "[]");
