@@ -9,7 +9,7 @@ export interface Card {
   providedIn: 'root'
 })
 export class ListStorageService {
-  cards: Card[] = [];
+  cards: Card[];
 
   constructor() { 
     this.cards = JSON.parse(localStorage.getItem("saved") || "[]");

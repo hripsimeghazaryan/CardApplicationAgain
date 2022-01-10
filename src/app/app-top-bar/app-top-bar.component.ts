@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { cards, Card } from '../cards';
-import { ListStorageService } from '../list-storage.service';
+import { ListStorageService, Card } from '../list-storage.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,18 +7,17 @@ import { ListStorageService } from '../list-storage.service';
   styleUrls: ['./app-top-bar.component.css']
 })
 export class AppTopBarComponent {
-  cardId = 1;
-  cards = cards;
-  constructor(private loggingService: ListStorageService) { }
+  cards: Card[];
+
+  constructor(private listService: ListStorageService) {
+    this.cards = this.listService.get();
+   }
 
   addCard() {
-    this.loggingService.add(++this.cardId);
-    // this.cards.push({id: ++this.cardId, cardNumber: Math.floor(Math.random() * 100)});
-    // localStorage.setItem("saved", JSON.stringify(this.cards));
+    this.listService.add(Date.now());
   }
 
   sortCards() {
-    this.cards.sort((a: { cardNumber: number; }, b: { cardNumber: number; }) => a.cardNumber - b.cardNumber);
-    localStorage.setItem("saved", JSON.stringify(this.cards));
+    this.listService.sort();
   }
 }
