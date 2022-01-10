@@ -36,7 +36,6 @@ export class ListStorageService {
 
   remove(id: number) {
     this.cards.splice(this.cards.findIndex((x: { id: number; }) => x.id == id), 1);
-    console.log(this.cards);
     this.set();
   }
 }
