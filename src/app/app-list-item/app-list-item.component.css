@@ -1,0 +1,21 @@
+.list-number {
+    padding: 50px 75px 50px 90px;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+.list-number h1 {
+    margin: 50px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
